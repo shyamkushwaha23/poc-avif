@@ -4,13 +4,177 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>AVIF POC with Fallback Support</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font: 62.5%/1 'Trebuchet MS', Georgia, Arial;
+      background: darkslategray;
+      color: #fff;
+    }
+
+    main {
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
+      color: skyblue;
+      font-size: 3rem;
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 3vh;
+    }
+
+    h2::before {
+      content: 'Page URL: '
+    }
+
+    .container {
+      display: flex;
+      column-gap: 2vw;
+      margin-bottom: 4vh;
+    }
+
+    figure {
+      ___border: 1px solid #fff;
+      width: 50%;
+      position: relative;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      font-size: 2rem;
+      position: relative;
+    }
+
+    figcaption {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      font-size: 1.2rem;
+      padding:2vh 2vw;
+      background-color: rgba(0,0,0,.75);
+      height: 10vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .file-size {
+      color: yellow;
+    }
+
+    .loading::before {
+      content: '';
+      background: url(images/loader.svg) no-repeat center center;
+      background-size: 100% 100%;
+      width: 36px;
+      height: 36px;
+      position: absolute;
+      top: calc(50% - 18px);
+      left: calc(50% - 18px);
+      animation: rotateLoader 1s infinite ;
+    }
+
+    @keyframes rotateLoader {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
-  <picture>
-    <source type="image/avif" srcset="snow.avif">
+  <main>
+    <h1>AVIF POC with Fallback Support:</h1>
+    <br />
+    
+    <h2>https://www.myperfectresume.com/resume</h2>
+    <section class="container">
+      <figure>
+        <img src="images/combination-resume-format-bg.png" alt="Combination Resume Format Background" width="960" height="723" class="loading" style="aspect-ratio : 960/723" />
+        <figcaption>Original PNG Image (325 KB)</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="images/combination-resume-format-bg.avif">
+          <source type="image/webp" srcset="images/combination-resume-format-bg.webp">
+
+          <img src="images/combination-resume-format-bg.png" alt="Combination Resume Format Background" width="960" height="723" class="loading" style="aspect-ratio : 960/723" />
+          <figcaption>AVIF Image <span class="file-size">(100 KB)</span> with Fallback of WEBP Image <span class="file-size">(200 KB)</span> with Fallback of PNG</figcaption>
+        </picture>
+      </figure>
+    </section>
+
+
+    <h2>https://www.myperfectresume.com/resume</h2>
+
+    <section class="container">
+      <figure>
+        <img src="images/functional-resume-format-bg.png" alt="Functional Resume Format Background" width="960" height="723" class="loading" style="aspect-ratio : 960/723" />
+        <figcaption>Original PNG Image (325KB)</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="images/functional-resume-format-bg.avif">
+          <source type="image/webp" srcset="images/functional-resume-format-bg.webp">
+
+          <img src="images/functional-resume-format-bg.png" alt="Functional Resume Format Background" width="960" height="723" class="loading" style="aspect-ratio : 960/723" />
+          <figcaption>AVIF Image <span class="file-size">(100 KB)</span> with Fallback of WEBP Image <span class="file-size">(200 KB)</span> with Fallback of PNG</figcaption>
+        </picture>
+      </figure>
+    </section>
+
+
+    <h2>https://www.resume-now.com/resume</h2>
+
+    <section class="container">
+      <figure>
+        <img src="images/hero-banner-headterm-resume.png" alt="Functional Resume Format Background" width="528" height="360" class="loading" style="aspect-ratio : 528/360" />
+        <figcaption>PNG Image (325KB)</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="images/hero-banner-headterm-resume.avif">
+          <source type="image/webp" srcset="images/hero-banner-headterm-resume.webp">
+
+          <img src="images/hero-banner-headterm-resume.png" alt="Functional Resume Format Background" width="528" height="360" class="loading" style="aspect-ratio : 528/360" />
+          <figcaption>AVIF Image <span class="file-size">(100 KB)</span> with Fallback of WEBP Image <span class="file-size">(200 KB)</span> with Fallback of PNG</figcaption>
+        </picture>
+      </figure>
+    </section>
+  </main>
   
-    <img alt="Hut in the snow" src="snow.jpg">
-  </picture>
+
+
+  <script>
+    var $images = document.querySelectorAll('img.loading');
+
+    $images.forEach(function(element, index, nodeList){
+      element.addEventListener('load', function() {
+        //this.classList.remove('loading');
+      })
+    })
+  </script>
 </body>
 </html>
