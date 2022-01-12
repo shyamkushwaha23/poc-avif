@@ -60,7 +60,7 @@
     .container {
       display: flex;
       column-gap: 2vw;
-      margin-bottom: 4vh;
+      margin-bottom: 6vh;
     }
 
     figure {
@@ -125,13 +125,53 @@
 <body>
   <main>
     <h1>AVIF POC with Fallback Support</h1>
-    <br />
-    
+
+
+    <h2><a href="https://www.livecareer.com/" target="blank">https://www.livecareer.com/</a> </h2>
+
+    <section class="container">
+      <figure>
+        <img src="images/homepage-banner-image.jpg" alt="Homepage Banner Image" width="1440" height="612" class="loading" style="aspect-ratio : 1440/612" />
+        <figcaption>Homepage Banner Image - PNG Image <span class="file-size">(69.7 KB)</span></figcaption>
+      </figure>
+
+      <figure>  
+        <picture>
+          <source type="image/avif" srcset="images/homepage-banner-image.avif">
+          <source type="image/webp" srcset="images/homepage-banner-image.webp">
+
+          <img src="images/homepage-banner-image.jpg" alt="Homepage Banner Image" width="1440" height="612" class="loading" style="aspect-ratio : 1440/612" />
+          <figcaption>AVIF Image <span class="file-size">(15 KB)</span> with Fallback of WEBP Image <span class="file-size">(32 KB)</span> with Fallback of PNG</figcaption>
+        </picture>
+      </figure>
+    </section>
+
+
+    <h2><a href="https://www.resume-now.com/resume" target="blank">https://www.resume-now.com/resume</a> </h2>
+
+    <section class="container">
+      <figure>
+        <img src="images/hero-banner-headterm-resume.png" alt="Hero Banner Head Term Resume" width="528" height="360" class="loading" style="aspect-ratio : 528/360" />
+        <figcaption>Hero Banner Head Term Resume - PNG Image <span class="file-size">(90.7 KB)</span></figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="images/hero-banner-headterm-resume.avif">
+          <source type="image/webp" srcset="images/hero-banner-headterm-resume.webp">
+
+          <img src="images/hero-banner-headterm-resume.png" alt="Hero Banner Head Term Resume" width="528" height="360" class="loading" style="aspect-ratio : 528/360" />
+          <figcaption>AVIF Image <span class="file-size">(14.4 KB)</span> with Fallback of WEBP Image <span class="file-size">(18.3 KB)</span> with Fallback of PNG</figcaption>
+        </picture>
+      </figure>
+    </section>
+
+
     <h2><a href="https://www.myperfectresume.com/resume" target="blank">https://www.myperfectresume.com/resume</a></h2>
     <section class="container">
       <figure>
         <img src="images/combination-resume-format-bg.png" alt="Combination Resume Format Background" width="960" height="723" class="loading" style="aspect-ratio : 960/723" />
-        <figcaption>Original PNG Image (253 KB)</figcaption>
+        <figcaption>Combination Resume Format BG - PNG Image <span class="file-size">(253 KB)</span></figcaption>
       </figure>
 
       <figure>
@@ -140,27 +180,7 @@
           <source type="image/webp" srcset="images/combination-resume-format-bg.webp">
 
           <img src="images/combination-resume-format-bg.png" alt="Combination Resume Format Background" width="960" height="723" class="loading" style="aspect-ratio : 960/723" />
-          <figcaption>AVIF Image <span class="file-size">(11.5 KB)</span> with Fallback of WEBP Image <span class="file-size">(20.8 KB)</span> with Fallback of PNG</figcaption>
-        </picture>
-      </figure>
-    </section>
-
-
-    <h2><a href="https://www.resume-now.com/resume" target="blank">https://www.resume-now.com/resume</a></h2>
-
-    <section class="container">
-      <figure>
-        <img src="images/hero-banner-headterm-resume.png" alt="Functional Resume Format Background" width="528" height="360" class="loading" style="aspect-ratio : 528/360" />
-        <figcaption>PNG Image (90.4 KB)</figcaption>
-      </figure>
-
-      <figure>
-        <picture>
-          <source type="image/avif___" srcset="images/hero-banner-headterm-resume.avif">
-          <source type="image/webp" srcset="images/hero-banner-headterm-resume.webp">
-
-          <img src="images/hero-banner-headterm-resume.png" alt="Functional Resume Format Background" width="528" height="360" class="loading" style="aspect-ratio : 528/360" />
-          <figcaption>AVIF Image <span class="file-size">(44.4 KB)</span> with Fallback of WEBP Image <span class="file-size">(18.3 KB)</span> with Fallback of PNG</figcaption>
+          <figcaption>AVIF Image <span class="file-size">(11.9 KB)</span> with Fallback of WEBP Image <span class="file-size">(20.8 KB)</span> with Fallback of PNG</figcaption>
         </picture>
       </figure>
     </section>
