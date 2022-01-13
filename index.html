@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AVIF POC with Fallback Support</title>
+  <title>AVIF POC with Fallback</title>
 
   <style>
     * {
@@ -38,7 +38,7 @@
       margin-bottom: 3vh;
     }
 
-    h2::before {
+    .page-url::before {
       content: 'Page URL: '
     }
 
@@ -139,10 +139,14 @@
 </head>
 <body>
   <main>
-    <h1>AVIF POC with Fallback Support - <a href="https://squoosh.app" target="_blank">Courtesy https://squoosh.app </a></h1>
+    <h1>AVIF POC with Fallback - <a href="https://squoosh.app" target="_blank"> https://squoosh.app </a></h1>
+    <h2><a href="https://caniuse.com/?search=avif" target="_blank">AVIF Browser Support</a>: Firefox 93+, Chrome 85+, Latest Android Browsers Only. <em>Not supported in iOS & Mac Safari.</em></h2>
+    <h2><a href="https://caniuse.com/?search=webp" target="_blank">WEBP Browser Support</a>: Firefox 65+, Chrome 32+, Edge 18+, iOS Safari 14, Mac Safari 14*, Almost All Mobile Browsers.</h2>
+    <hr style="border-style: dashed;border-width: 1px 0 0; opacity: .5;" />
+    <br />
 
 
-    <h2><a href="https://www.livecareer.com/" target="blank">https://www.livecareer.com/</a> </h2>
+    <h2 class="page-url"><a href="https://www.livecareer.com/" target="blank">https://www.livecareer.com/</a> </h2>
 
     <section class="container">
       <figure>
@@ -162,7 +166,7 @@
     </section>
 
 
-    <h2><a href="https://www.resume-now.com/resume" target="blank">https://www.resume-now.com/resume</a> </h2>
+    <h2 class="page-url"><a href="https://www.resume-now.com/resume" target="blank">https://www.resume-now.com/resume</a> </h2>
 
     <section class="container">
       <figure>
@@ -182,7 +186,8 @@
     </section>
 
 
-    <h2><a href="https://www.myperfectresume.com/resume" target="blank">https://www.myperfectresume.com/resume</a></h2>
+    <h2 class="page-url"><a href="https://www.myperfectresume.com/resume" target="blank">https://www.myperfectresume.com/resume</a></h2>
+    
     <section class="container">
       <figure>
         <img src="images/combination-resume-format-bg.png" alt="Combination Resume Format Background" width="960" height="723" class="loading" style="aspect-ratio : 960/723" />
@@ -201,7 +206,8 @@
     </section>
 
 
-    <h2><a href="https://zety.com/" target="blank">https://zety.com/</a></h2>
+    <h2 class="page-url"><a href="https://zety.com/" target="blank">https://zety.com/</a></h2>
+
     <section class="container">
       <figure>
         <img src="images/carousel-resume-templates.jpg" alt="Carousel Resume Templates" width="1366" height="694" class="loading" style="aspect-ratio : 1366/694" />
